@@ -1,32 +1,43 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
-  </div>
+  <v-app>
+    <v-app-bar app color="primary" dark>
+      <div class="d-flex align-center pointer" @click="$router.push('/')">
+        <v-img
+          alt="Project Logo"
+          class="shrink mr-2 pa-3"
+          style="filter: invert(1);"
+          contain
+          :src="require('./assets/logo.svg')"
+          transition="scale-transition"
+          width="40"
+        />
+        <v-toolbar-title>Project-name</v-toolbar-title>
+      </div>
+
+      <v-spacer></v-spacer>
+      <v-toolbar-items>
+        <v-btn :to="{ name: 'Contacts' }" text>
+          Contacts
+        </v-btn>
+        <v-btn :to="{ name: 'Prices' }" text>
+          Prices
+        </v-btn>
+      </v-toolbar-items>
+    </v-app-bar>
+
+    <v-content>
+      <router-view></router-view>
+    </v-content>
+  </v-app>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<script>
+export default {
+  name: 'App'
 }
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+</script>
+<style>
+.pointer {
+  cursor: pointer;
 }
 </style>
