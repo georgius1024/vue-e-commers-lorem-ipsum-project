@@ -11,12 +11,12 @@ const routes = [
     component: Home
   },
   {
-    path: '/contacts.html',
+    path: '/contacts',
     name: 'Contacts',
     component: () => import('../views/Contacts')
   },
   {
-    path: '/prices.html',
+    path: '/prices',
     name: 'Prices',
     component: () => import('../views/Prices')
   }
