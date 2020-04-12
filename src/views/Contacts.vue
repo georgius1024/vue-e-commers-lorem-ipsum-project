@@ -9,12 +9,13 @@
     <v-list two-line>
       <v-list-item v-for="i in 4" :key="i">
         <v-list-item-avatar>
-          <v-img src="../assets/userpic.png"></v-img>
+          <img :src="require('../assets/userpic.png')" />
         </v-list-item-avatar>
         <v-list-item-content>
           <v-list-item-title>Contact-name, Contact-position</v-list-item-title>
           <v-list-item-subtitle
-            ><a href="#">Contact-phone</a>, <a href="#">Contact-skype</a>, <a href="#">Contact-link</a></v-list-item-subtitle
+            ><a href="#">Contact-phone</a>, <a href="#">Contact-skype</a>,
+            <a href="#">Contact-link</a></v-list-item-subtitle
           >
         </v-list-item-content>
       </v-list-item>
