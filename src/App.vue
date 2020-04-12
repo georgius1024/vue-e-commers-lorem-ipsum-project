@@ -14,10 +14,22 @@
 
       <v-spacer></v-spacer>
       <v-toolbar-items>
+        <v-btn :to="{ name: 'Home' }" exact text>
+          <v-icon class="mr-2">
+            mdi-home
+          </v-icon>
+          Home
+        </v-btn>
         <v-btn :to="{ name: 'Prices' }" text>
+          <v-icon class="mr-2">
+            mdi-currency-usd
+          </v-icon>
           Prices
         </v-btn>
         <v-btn :to="{ name: 'Contacts' }" text>
+          <v-icon class="mr-2">
+            mdi-map-marker
+          </v-icon>
           Contacts
         </v-btn>
       </v-toolbar-items>
