@@ -55,35 +55,34 @@
 </template>
 
 <script>
-;(function() {
-  var setting = {
-    height: 538,
-    width: 803,
-    zoom: 16,
-    queryString: 'проспект Мира, 23, Москва, Россия',
-    place_id: 'ChIJX684T3JKtUYRm3hemtOTX1I',
-    satellite: false,
-    centerCoord: [55.77913947334887, 37.632426050000014],
-    cid: '0x525f93d39a5e789b',
-    lang: 'ru',
-    cityUrl: '/russia/moscow',
-    cityAnchorText: 'Карта [CITY1], Central Federal District, Россия',
-    id: 'map-9cd199b9cc5410cd3b1ad21cab2e54d3',
-    embed_id: '193147'
-  }
-  var d = document
-  var s = d.createElement('script')
-  s.src = 'https://embedgooglemap.1map.com/js/script-for-user.js?embed_id=193147'
-  s.async = true
-  s.onload = function() {
-    window.OneMap.initMap(setting)
-  }
-  var to = d.getElementsByTagName('script')[0]
-  to.parentNode.insertBefore(s, to)
-})()
-
 export default {
-  name: 'Contacts'
+  name: 'Contacts',
+  mounted() {
+    const setting = {
+      height: 538,
+      width: 803,
+      zoom: 16,
+      queryString: 'проспект Мира, 23, Москва, Россия',
+      place_id: 'ChIJX684T3JKtUYRm3hemtOTX1I',
+      satellite: false,
+      centerCoord: [55.77913947334887, 37.632426050000014],
+      cid: '0x525f93d39a5e789b',
+      lang: 'ru',
+      cityUrl: '/russia/moscow',
+      cityAnchorText: 'Карта [CITY1], Central Federal District, Россия',
+      id: 'map-9cd199b9cc5410cd3b1ad21cab2e54d3',
+      embed_id: '193147'
+    }
+    const d = document
+    const s = d.createElement('script')
+    s.src = 'https://embedgooglemap.1map.com/js/script-for-user.js?embed_id=193147'
+    s.async = true
+    s.onload = function() {
+      window.OneMap.initMap(setting)
+    }
+    var to = d.getElementsByTagName('script')[0]
+    to.parentNode.insertBefore(s, to)
+  }
 }
 </script>
 

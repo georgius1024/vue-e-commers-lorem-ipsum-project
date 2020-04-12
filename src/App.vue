@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <v-app-bar app color="primary" dark>
-      <div class="d-flex align-center pointer" @click="$router.push('/')">
+      <router-link class="d-flex align-center logo" :to="{ name: 'Home' }">
         <v-img
           alt="Project Logo"
           class="shrink mr-2 pa-3"
@@ -12,15 +12,15 @@
           width="40"
         />
         <v-toolbar-title>Project-name</v-toolbar-title>
-      </div>
+      </router-link>
 
       <v-spacer></v-spacer>
       <v-toolbar-items>
-        <v-btn :to="{ name: 'Contacts' }" text>
-          Contacts
-        </v-btn>
         <v-btn :to="{ name: 'Prices' }" text>
           Prices
+        </v-btn>
+        <v-btn :to="{ name: 'Contacts' }" text>
+          Contacts
         </v-btn>
       </v-toolbar-items>
     </v-app-bar>
@@ -37,7 +37,8 @@ export default {
 }
 </script>
 <style>
-.pointer {
-  cursor: pointer;
+a.logo {
+  color: #fff !important;
+  text-decoration: none;
 }
 </style>
