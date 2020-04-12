@@ -3,10 +3,10 @@
     <v-app-bar app color="primary" dark>
       <router-link class="d-flex align-center logo" :to="{ name: 'Home' }">
         <img
-          :src="require('./assets/logo.svg')"
           alt="Project Logo"
           class="shrink mr-2 pa-3"
           style="filter: invert(1);"
+          :src="require('./assets/logo.svg')"
           width="56"
         />
         <v-toolbar-title>Project-name</v-toolbar-title>
