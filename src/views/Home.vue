@@ -1,5 +1,5 @@
 <template>
-  <v-container v-if="dataLoaded">
+  <v-container>
     <h1 class="display-4 mb-5">Project-name</h1>
     <div class="text-center my-6">
       <img :src="require('../assets/logo.svg')" width="120" alt="logo" />
@@ -80,15 +80,5 @@
 <script>
 export default {
   name: 'Home',
-  data() {
-    return {
-      dataLoaded: false
-    }
-  },
-  mounted() {
-    setTimeout(() => {
-      this.dataLoaded = true
-    }, 200)
-  }
 }
 </script>
