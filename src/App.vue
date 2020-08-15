@@ -20,6 +20,12 @@
           </v-icon>
           Home
         </v-btn>
+        <v-btn :to="{ name: 'Services' }" text>
+          <v-icon class="mr-2">
+            mdi-beehive-outline
+          </v-icon>
+          Services
+        </v-btn>
         <v-btn :to="{ name: 'Prices' }" text>
           <v-icon class="mr-2">
             mdi-currency-usd
