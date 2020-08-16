@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app class="grey lighten-5">
     <v-app-bar app color="primary" dark>
       <router-link class="d-flex align-center logo" :to="{ name: 'Home' }">
         <img
@@ -42,7 +42,9 @@
     </v-app-bar>
 
     <v-content>
-      <router-view></router-view>
+      <v-fade-transition>
+        <router-view></router-view>
+      </v-fade-transition>
     </v-content>
   </v-app>
 </template>

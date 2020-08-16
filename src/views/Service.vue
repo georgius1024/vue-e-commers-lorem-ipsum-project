@@ -1,0 +1,60 @@
+<template>
+  <v-container>
+    <div v-if="service">
+      <v-breadcrumbs
+        class="ml-4"
+        :items="[
+          {
+            text: 'All services',
+            exact: true,
+            to: { name: 'Services' }
+          },
+          {
+            text: service.title,
+            exact: true,
+            to: { name: 'Service', params: { id: service.id } }
+          }
+        ]"
+      />
+      <h1 class="display-2 mb-5 mt-3 text-capitalize">{{ service.title }}</h1>
+      <v-row>
+        <v-col cols="12">
+          <v-img :src="service.image" :height="480" :width="640" />
+        </v-col>
+      </v-row>
+      <p class="body-1 mb-4">
+        {{ service.description }}
+      </p>
+      <v-btn color="primary" block large :to="{ name: 'Prices' }">
+        Subscribe now
+      </v-btn>
+    </div>
+    <v-alert type="warning" v-else class="ma-5">
+      Service is loading
+      <v-progress-circular indeterminate color="red" class="ml-4" />
+    </v-alert>
+  </v-container>
+</template>
+
+<script>
+export default {
+  name: 'Service',
+  props: {
+    id: {
+      required: true
+    }
+  },
+  data() {
+    return {
+      service: null
+    }
+  },
+  mounted() {
+    setTimeout(() => {
+      import('../assets/services').then(services => (this.service = services.default.find(e => e.id == this.id)))
+    }, 100)
+  }
+}
+</script>
+
+<style></style>
