@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <Layout>
     <div v-if="services">
       <h1 class="display-4 mb-5">Services</h1>
       <v-list three-line>
@@ -24,12 +24,14 @@
       Services are loading
       <v-progress-circular indeterminate color="red" class="ml-4" />
     </v-alert>
-  </v-container>
+  </Layout>
 </template>
 
 <script>
+import Layout from '../layouts/default'
 export default {
-  name: 'Product',
+  name: 'Services',
+  components: { Layout },
   data() {
     return {
       services: null

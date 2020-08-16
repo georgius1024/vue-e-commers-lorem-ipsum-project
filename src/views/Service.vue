@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <Layout>
     <div v-if="service">
       <v-breadcrumbs
         class="ml-4"
@@ -33,12 +33,14 @@
       Service is loading
       <v-progress-circular indeterminate color="red" class="ml-4" />
     </v-alert>
-  </v-container>
+  </Layout>
 </template>
 
 <script>
+import Layout from '../layouts/default'
 export default {
   name: 'Service',
+  components: { Layout },
   props: {
     id: {
       required: true
