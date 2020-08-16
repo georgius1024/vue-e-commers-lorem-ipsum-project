@@ -52,7 +52,7 @@ export default {
   mounted() {
     setTimeout(() => {
       import('../assets/services').then(services => (this.service = services.default.find(e => e.id == this.id)))
-    }, 100)
+    }, 500)
   }
 }
 </script>

@@ -9,5 +9,5 @@ new Vue({
   router,
   vuetify,
   render: h => h(App),
-  mounted: () => document.dispatchEvent(new Event('x-app-rendered'))
+  mounted: () => setInterval(() => document.dispatchEvent(new Event('x-app-rendered')), 1000)
 }).$mount('#app')
