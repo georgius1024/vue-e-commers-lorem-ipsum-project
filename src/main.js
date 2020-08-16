@@ -8,6 +8,5 @@ Vue.config.productionTip = false
 new Vue({
   router,
   vuetify,
-  render: h => h(App),
-  mounted: () => setInterval(() => document.dispatchEvent(new Event('x-app-rendered')), 1000)
+  render: h => h(App)
 }).$mount('#app')
