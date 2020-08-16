@@ -15,9 +15,9 @@
       </v-list-item-group>
     </v-list>
   </v-container>
-  <v-alert type="warning" v-else>
-    <v-progress-circular indeterminate color="red" />
+  <v-alert type="warning" v-else class="ma-5">
     Services are loading
+    <v-progress-circular indeterminate color="red" class="ml-4"/>
   </v-alert>
 </template>
 
@@ -30,7 +30,9 @@ export default {
     }
   },
   mounted() {
-    import('../assets/services').then(services => (this.services = services))
+    setTimeout(() => {
+      import('../assets/services').then(services => (this.services = services))
+    }, 1000)
   }
 }
 </script>
