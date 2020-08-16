@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <Layout>
     <h1 class="display-4 mb-5">Prices</h1>
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad blanditiis nobis autem rem quidem, unde iste vitae
@@ -67,11 +67,15 @@
       possimus. Modi nesciunt culpa ad, et inventore tenetur labore ea quisquam, recusandae soluta ducimus, impedit nemo
       unde laboriosam. Quia accusantium, nihil amet reprehenderit cum eaque autem?
     </p>
-  </v-container>
+  </Layout>
 </template>
 
 <script>
-export default {}
+import Layout from '../layouts/default'
+export default {
+  name: 'Prices',
+  components: { Layout }
+}
 </script>
 
 <style></style>

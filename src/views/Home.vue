@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <Layout>
     <h1 class="display-4 mb-5">Project-name</h1>
     <div class="text-center my-6">
       <img :src="require('../assets/logo.svg')" width="120" alt="logo" />
@@ -74,11 +74,13 @@
     <v-btn color="primary" block large :to="{ name: 'Prices' }">
       Subscribe now
     </v-btn>
-  </v-container>
+  </Layout>
 </template>
 
 <script>
+import Layout from '../layouts/default'
 export default {
-  name: 'Home'
+  name: 'Home',
+  components: { Layout }
 }
 </script>
