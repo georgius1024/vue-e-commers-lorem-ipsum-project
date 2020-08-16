@@ -41,11 +41,11 @@
       </v-toolbar-items>
     </v-app-bar>
 
-    <v-content>
+    <v-main>
       <v-fade-transition>
         <router-view></router-view>
       </v-fade-transition>
-    </v-content>
+    </v-main>
   </v-app>
 </template>
 

@@ -38,7 +38,7 @@ export default {
   mounted() {
     setTimeout(() => {
       import('../assets/services').then(services => (this.services = services.default))
-    }, 1000)
+    }, 500)
   }
 }
 </script>
