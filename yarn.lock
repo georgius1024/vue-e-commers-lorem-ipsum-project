@@ -8643,6 +8643,11 @@ vuetify@^2.2.11:
   resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-2.2.21.tgz#f89d0d7e439470ab9138bca8a2034ce8e84a6e50"
   integrity sha512-xUgU7Cxpm6qZd1xY3I0NsJbdEErSPgb1iT4qeGOLD8uTGyXXc3IwYEpXqb2nH577RdeT0cTNpzM/NyNf2Fmpvw==
 
+vuex@^3.5.1:
+  version "3.5.1"
+  resolved "https://registry.yarnpkg.com/vuex/-/vuex-3.5.1.tgz#f1b8dcea649bc25254cf4f4358081dbf5da18b3d"
+  integrity sha512-w7oJzmHQs0FM9LXodfskhw9wgKBiaB+totOdb8sNzbTB2KDCEEwEs29NzBZFh/lmEK1t5tDmM1vtsO7ubG1DFw==
+
 watchpack@^1.6.0:
   version "1.6.1"
   resolved "https://registry.yarnpkg.com/watchpack/-/watchpack-1.6.1.tgz#280da0a8718592174010c078c7585a74cd8cd0e2"
