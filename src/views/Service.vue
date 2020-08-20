@@ -29,14 +29,11 @@
         Subscribe now
       </v-btn>
     </div>
-    <v-alert type="warning" v-else class="ma-5">
-      Service is loading
-      <v-progress-circular indeterminate color="red" class="ml-4" />
-    </v-alert>
   </Layout>
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 import Layout from '../layouts/default'
 export default {
   name: 'Service',
@@ -52,9 +49,10 @@ export default {
     }
   },
   mounted() {
-    setTimeout(() => {
-      import('../assets/services').then(services => (this.service = services.default.find(e => e.id == this.id)))
-    }, 500)
+    this.fetchService(+this.id).then(service => (this.service = service))
+  },
+  methods: {
+    ...mapActions(['fetchService'])
   }
 }
 </script>

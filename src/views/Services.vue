@@ -20,14 +20,11 @@
         </v-list-item-group>
       </v-list>
     </div>
-    <v-alert type="warning" v-else class="ma-5">
-      Services are loading
-      <v-progress-circular indeterminate color="red" class="ml-4" />
-    </v-alert>
   </Layout>
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 import Layout from '../layouts/default'
 export default {
   name: 'Services',
@@ -38,9 +35,10 @@ export default {
     }
   },
   mounted() {
-    setTimeout(() => {
-      import('../assets/services').then(services => (this.services = services.default))
-    }, 500)
+    this.fetchServices().then(services => (this.services = services))
+  },
+  methods: {
+    ...mapActions(['fetchServices'])
   }
 }
 </script>

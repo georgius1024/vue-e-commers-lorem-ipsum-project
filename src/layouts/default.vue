@@ -12,9 +12,7 @@
           />
           <v-toolbar-title>Project-name</v-toolbar-title>
         </router-link>
-
-        <v-spacer></v-spacer>
-        <v-toolbar-items>
+        <v-toolbar-items class="ml-6">
           <v-btn :to="{ name: 'Home' }" exact text>
             <v-icon class="mr-2">
               mdi-home
@@ -40,52 +38,69 @@
             Contacts
           </v-btn>
         </v-toolbar-items>
+        <v-spacer></v-spacer>
         <v-toolbar-items class="ml-4">
-          <v-menu offset-y v-if="1">
-            <v-btn text small slot="activator">
-              <span>
-                user.name
-              </span>
-              <v-icon>mdi-chevron-down</v-icon>
-            </v-btn>
+          <v-menu offset-y v-if="user">
+            <template v-slot:activator="{ on, attrs }">
+              <v-btn text small slot="activator" v-on="on" v-bind="attrs">
+                <span>
+                  {{ user.name }}
+                </span>
+                <v-icon>mdi-chevron-down</v-icon>
+              </v-btn>
+            </template>
             <v-list>
-              <v-list-tile :to="{ name: 'change-password' }">
-                <v-list-tile-title>Change password</v-list-tile-title>
-              </v-list-tile>
-              <v-list-tile :to="{ name: 'logout' }">
-                <v-list-tile-title>Logout</v-list-tile-title>
-              </v-list-tile>
+              <v-list-item @click="logout">
+                <v-list-item-title>Logout</v-list-item-title>
+              </v-list-item>
             </v-list>
           </v-menu>
           <template v-else>
-            <v-btn text :to="{ name: 'login' }">
+            <v-btn text :to="{ name: 'Login' }">
               <span>
                 Login
               </span>
             </v-btn>
-            <v-btn text :to="{ name: 'register' }">
-              <span>
-                Register
-              </span>
-            </v-btn>
           </template>
         </v-toolbar-items>
-
       </v-app-bar>
       <slot />
     </v-container>
+    <div class="loader" v-if="loading">
+      <v-progress-circular indeterminate color="primary" :size="220" :width="16"></v-progress-circular>
+    </div>
   </v-content>
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex'
 export default {
-  name: 'DefaultLayout'
+  name: 'DefaultLayout',
+  computed: {
+    ...mapGetters(['user', 'loading'])
+  },
+  methods: {
+    ...mapActions(['logout'])
+  }
 }
 </script>
 
-<style>
+<style scoped>
 a.logo {
   color: #fff !important;
   text-decoration: none;
+}
+div.loader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.6);
+  cursor: wait;
 }
 </style>
