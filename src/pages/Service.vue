@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <div v-if="service">
+    <template v-if="service">
       <v-breadcrumbs
         class="ml-4"
         :items="[
@@ -28,7 +28,10 @@
       <v-btn color="primary" block large :to="{ name: 'Prices' }">
         Subscribe now
       </v-btn>
-    </div>
+    </template>
+    <template v-else>
+      <v-skeleton-loader class="mt-5" type="card-heading, image, paragraph, paragraph, paragraph"> </v-skeleton-loader>
+    </template>
   </Layout>
 </template>
 

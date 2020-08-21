@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <div v-if="services">
+    <template v-if="services">
       <h1 class="display-4 mb-5">Services</h1>
       <v-list three-line>
         <v-list-item-group>
@@ -19,7 +19,13 @@
           </v-list-item>
         </v-list-item-group>
       </v-list>
-    </div>
+    </template>
+    <template v-else>
+      <v-skeleton-loader class="mt-5" type="heading"> </v-skeleton-loader>
+      <v-skeleton-loader type="list-item-avatar-three-line"> </v-skeleton-loader>
+      <v-skeleton-loader type="list-item-avatar-three-line"> </v-skeleton-loader>
+      <v-skeleton-loader type="list-item-avatar-three-line"> </v-skeleton-loader>
+    </template>
   </Layout>
 </template>
 
