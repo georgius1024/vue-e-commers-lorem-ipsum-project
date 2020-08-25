@@ -1,4 +1,4 @@
-# vuetify-prerender
+# E-Commerce Startup Landing Page(-s)
 
 ## Project setup
 ```
